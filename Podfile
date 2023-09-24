@@ -6,5 +6,6 @@ target 'PicSum Image Gallery' do
   use_frameworks!
 
   # Pods for PicSum Image Gallery
-    pod 'SQLite.swift', '~> 0.14.0'
+  pod 'SQLite.swift', '~> 0.14.0'
+
 end
