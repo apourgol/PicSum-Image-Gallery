@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailView: View {
 
     @State private var showDetails = false
+    @State private var isFavorited = false
 
     let url: String?
     let authorName: String?
@@ -80,6 +81,19 @@ struct DetailView: View {
                 Text("*Made with SwiftUI")
                     .font(.footnote)
                     .foregroundColor(Color.black)
+
+            Spacer()
+
+            Button(action: {
+                isFavorited = !isFavorited
+
+                let dbManager = DBManager()
+                dbManager.addData(idValue: self.idNumber!, urlValue: self.url!, nameValue: self.authorName!)
+
+            }) {
+                Label("", systemImage: isFavorited ? "heart.fill" : "heart")
+                    .foregroundColor(Color.red)
+            }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
