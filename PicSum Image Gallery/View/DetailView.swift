@@ -21,7 +21,7 @@ struct DetailView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("The PicSum Art Gallery presents:")
+                Text("presenting")
                     .font(.largeTitle)
                     .foregroundColor(Color.black)
                 AsyncImage(url: URL(string: url ?? "")) { image in
@@ -49,7 +49,7 @@ struct DetailView: View {
                     Image(systemName: "chevron.right.circle.fill")
                         .rotationEffect(.degrees(showDetails ? 90 : 0))
                         .foregroundColor(Color.white)
-                    Text("Show More Details")
+                    Text("details")
                         .foregroundColor(Color.white)
                 }
             })
@@ -77,8 +77,8 @@ struct DetailView: View {
                 .edgesIgnoringSafeArea(.all)
             }
             Spacer()
-            VStack() {
-                Text("*Made with SwiftUI")
+            HStack() {
+                Text("liked")
                     .font(.footnote)
                     .foregroundColor(Color.black)
 

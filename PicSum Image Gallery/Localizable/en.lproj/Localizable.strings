@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  PicSum Image Gallery
+
+  Created by Amin Pourgol on 9/24/23.
+  
+*/
+
+"title" = "PicSum Image Gallery";
+"presenting" = "The PicSum Image Gallery presents:";
+"liked" = "Like it? Favorite it!";
+"details" = "Show More Details";

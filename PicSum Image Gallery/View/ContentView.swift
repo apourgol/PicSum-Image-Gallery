@@ -33,7 +33,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle("PicSum Image Gallery")
+            .navigationBarTitle("title")
         }
         .onAppear {
             self.networkManager.fetchData()

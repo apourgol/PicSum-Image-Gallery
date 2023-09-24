@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  PicSum Image Gallery
+
+  Created by Amin Pourgol on 9/24/23.
+  
+*/
+
+"title" = "PicSum Resim Galerisi";
+"presenting" = "PicSum Resim Galerisi sunar:";
+"liked" = "Beğendin mi? Favorim!";
+"details" = "Daha Fazla Ayrıntı Göster";
