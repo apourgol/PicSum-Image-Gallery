@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
 
-    @State private var showDetails = false
-    @State private var isFavorited = false
+    @ObservedObject var viewModel = DetailViewModel()
 
     let url: String?
     let authorName: String?
@@ -31,7 +30,7 @@ struct DetailView: View {
                         .cornerRadius(25)
                 } placeholder: {
                     // Placeholder view while the image is being loaded
-                    Color.black
+                    Color.white
                 }
             }
             .padding(.bottom, 50)
@@ -42,19 +41,19 @@ struct DetailView: View {
                 .frame(height: 50)
                 .overlay(Button(action: {
                 withAnimation {
-                    showDetails.toggle()
+                    viewModel.showDetails.toggle()
                 }
             }) {
                 HStack {
                     Image(systemName: "chevron.right.circle.fill")
-                        .rotationEffect(.degrees(showDetails ? 90 : 0))
+                        .rotationEffect(.degrees(viewModel.showDetails ? 90 : 0))
                         .foregroundColor(Color.white)
                     Text("details")
                         .foregroundColor(Color.white)
                 }
             })
 
-            if showDetails {
+            if viewModel.showDetails {
                 ZStack {
                     VStack(alignment: .leading, spacing: 15) {
                         Label(authorName ?? "", systemImage: "heart.fill")
@@ -85,13 +84,13 @@ struct DetailView: View {
             Spacer()
 
             Button(action: {
-                isFavorited = !isFavorited
+                viewModel.isFavorited = !viewModel.isFavorited
 
                 let dbManager = DBManager()
                 dbManager.addData(idValue: self.idNumber!, urlValue: self.url!, nameValue: self.authorName!)
 
             }) {
-                Label("", systemImage: isFavorited ? "heart.fill" : "heart")
+                Label("", systemImage: viewModel.isFavorited ? "heart.fill" : "heart")
                     .foregroundColor(Color.red)
             }
             }

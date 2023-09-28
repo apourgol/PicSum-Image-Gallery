@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4167242FB4652408C28B7F99 /* Pods_PicSum_Image_Gallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A78A89D976FF7A68CA542D9 /* Pods_PicSum_Image_Gallery.framework */; };
+		AD01E6D02AC0BF0100B6F303 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD01E6CF2AC0BF0100B6F303 /* ContentViewModel.swift */; };
 		AD18615B2AB7DBAC001F6E18 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18615A2AB7DBAC001F6E18 /* NetworkManager.swift */; };
 		AD18615D2AB7DBD1001F6E18 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18615C2AB7DBD1001F6E18 /* PostData.swift */; };
 		AD18615F2AB88CBD001F6E18 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18615E2AB88CBD001F6E18 /* DataModel.swift */; };
 		AD1861622AB88EC6001F6E18 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1861612AB88EC6001F6E18 /* DBManager.swift */; };
+		AD26DE6B2AC2104100A658AC /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD26DE6A2AC2104100A658AC /* DetailViewModel.swift */; };
 		AD3191702AB7D9A300D5CF1D /* PicSum_Image_GalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31916F2AB7D9A300D5CF1D /* PicSum_Image_GalleryApp.swift */; };
 		AD3191722AB7D9A300D5CF1D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3191712AB7D9A300D5CF1D /* ContentView.swift */; };
 		AD3191742AB7D9A400D5CF1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD3191732AB7D9A400D5CF1D /* Assets.xcassets */; };
@@ -23,10 +25,12 @@
 /* Begin PBXFileReference section */
 		3A78A89D976FF7A68CA542D9 /* Pods_PicSum_Image_Gallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicSum_Image_Gallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5346A0E8E7859DDD04B1CA4E /* Pods-PicSum Image Gallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicSum Image Gallery.release.xcconfig"; path = "Target Support Files/Pods-PicSum Image Gallery/Pods-PicSum Image Gallery.release.xcconfig"; sourceTree = "<group>"; };
+		AD01E6CF2AC0BF0100B6F303 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		AD18615A2AB7DBAC001F6E18 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AD18615C2AB7DBD1001F6E18 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		AD18615E2AB88CBD001F6E18 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		AD1861612AB88EC6001F6E18 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		AD26DE6A2AC2104100A658AC /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		AD31916C2AB7D9A300D5CF1D /* PicSum Image Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PicSum Image Gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD31916F2AB7D9A300D5CF1D /* PicSum_Image_GalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicSum_Image_GalleryApp.swift; sourceTree = "<group>"; };
 		AD3191712AB7D9A300D5CF1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,13 +93,14 @@
 		AD31916E2AB7D9A300D5CF1D /* PicSum Image Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				AD9561132AC0A55E00050432 /* Localizable */,
+				AD3191732AB7D9A400D5CF1D /* Assets.xcassets */,
 				AD1861602AB88EB9001F6E18 /* DB */,
+				ADC938B02AC513710050B082 /* DetailView */,
+				AD9561132AC0A55E00050432 /* Localizable */,
 				AD1861592AB7DAF9001F6E18 /* Model */,
 				AD31916F2AB7D9A300D5CF1D /* PicSum_Image_GalleryApp.swift */,
-				AD31917D2AB7D9E600D5CF1D /* View */,
-				AD3191732AB7D9A400D5CF1D /* Assets.xcassets */,
 				AD3191752AB7D9A400D5CF1D /* Preview Content */,
+				AD31917D2AB7D9E600D5CF1D /* ContentView */,
 			);
 			path = "PicSum Image Gallery";
 			sourceTree = "<group>";
@@ -108,13 +113,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		AD31917D2AB7D9E600D5CF1D /* View */ = {
+		AD31917D2AB7D9E600D5CF1D /* ContentView */ = {
 			isa = PBXGroup;
 			children = (
 				AD3191712AB7D9A300D5CF1D /* ContentView.swift */,
-				AD31917E2AB7DA1800D5CF1D /* DetailView.swift */,
+				AD01E6CF2AC0BF0100B6F303 /* ContentViewModel.swift */,
 			);
-			path = View;
+			path = ContentView;
 			sourceTree = "<group>";
 		};
 		AD9561132AC0A55E00050432 /* Localizable */ = {
@@ -125,13 +130,21 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		ADC938B02AC513710050B082 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				AD31917E2AB7DA1800D5CF1D /* DetailView.swift */,
+				AD26DE6A2AC2104100A658AC /* DetailViewModel.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
 		D9D2C3B2B947CDF98F333E3F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				B500294307140606A3757F83 /* Pods-PicSum Image Gallery.debug.xcconfig */,
 				5346A0E8E7859DDD04B1CA4E /* Pods-PicSum Image Gallery.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -259,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD01E6D02AC0BF0100B6F303 /* ContentViewModel.swift in Sources */,
 				AD18615D2AB7DBD1001F6E18 /* PostData.swift in Sources */,
 				AD1861622AB88EC6001F6E18 /* DBManager.swift in Sources */,
 				AD18615B2AB7DBAC001F6E18 /* NetworkManager.swift in Sources */,
+				AD26DE6B2AC2104100A658AC /* DetailViewModel.swift in Sources */,
 				AD3191722AB7D9A300D5CF1D /* ContentView.swift in Sources */,
 				AD31917F2AB7DA1800D5CF1D /* DetailView.swift in Sources */,
 				AD3191702AB7D9A300D5CF1D /* PicSum_Image_GalleryApp.swift in Sources */,
@@ -412,6 +427,7 @@
 				DEVELOPMENT_TEAM = 2W8G85TM35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PicSum;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -442,6 +458,7 @@
 				DEVELOPMENT_TEAM = 2W8G85TM35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PicSum;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

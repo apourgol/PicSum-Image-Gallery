@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-
-    @ObservedObject var networkManager = NetworkManager()
+    //init ViewModel here
+    @ObservedObject var viewModel = ContentViewModel()
 
     var body: some View {
         NavigationView {
-            List(networkManager.posts) { post in
+            List(viewModel.posts) { post in
                 NavigationLink(destination: DetailView(url: post.download_url, authorName: post.author, idNumber: post.id, imgWidth: post.width, imgHeight: post.height)) {
                     HStack {
                         AsyncImage(url: URL(string: post.download_url)) { image in
@@ -24,6 +24,8 @@ struct ContentView: View {
                         } placeholder: {
                             // Placeholder view while the image is being loaded
                             Color.white
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(10)
                         }
                         VStack(alignment: .leading, spacing: 3){
                             Text(post.author)
@@ -36,7 +38,7 @@ struct ContentView: View {
             .navigationBarTitle("title")
         }
         .onAppear {
-            self.networkManager.fetchData()
+            viewModel.retrieveData()
         }
     }
 }

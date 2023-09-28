@@ -9,23 +9,26 @@ import Foundation
 
 class NetworkManager: ObservableObject {
 
-    @Published var posts: [Results] = []
-
-    func fetchData() {
+    func fetchData(completion: @escaping ([Results]?) -> Void) {
         if let url = URL(string: "https://picsum.photos/v2/list?page=2&limit=20") {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
-                if error == nil {
+                if let error = error {
+                    print("Error: \(error)")
+                    completion(nil)
+                    return
+                }
+
+                if let safeData = data {
                     let decoder = JSONDecoder()
-                    if let safeData = data {
-                        do {
-                            let results = try decoder.decode([Results].self, from: safeData)
-                            DispatchQueue.main.async {
-                                self.posts = results
-                            }
-                        } catch {
-                            print(error)
+                    do {
+                        let results = try decoder.decode([Results].self, from: safeData)
+                        DispatchQueue.main.async {
+                            completion(results)
                         }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                        completion(nil)
                     }
                 }
             }
